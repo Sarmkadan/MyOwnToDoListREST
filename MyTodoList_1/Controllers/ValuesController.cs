@@ -67,8 +67,8 @@ namespace MyTodoList_1.Controllers
             /* var item = new List<dynamic> { new  { Value = "Ale", Id = 30 } };
 
              return Request.CreateResponse(HttpStatusCode.OK, item);*/
-             var a = db.ItemDbSet.AsQueryable();
-            return a.ToList();
+             var a = db.ItemDbSet.AsQueryable().ToList();
+            return a;
         }
 
         // GET api/values/5
