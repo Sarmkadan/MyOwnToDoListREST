@@ -18,7 +18,7 @@ namespace MyTodoList_1.Controllers
   //  [Authorize]
     public class ValuesController : ApiController
     {
-        Connstring db = new Connstring();
+        ItemsDbContext db = new ItemsDbContext();
         // GET api/values
 
         public IEnumerable<Item> Get()
@@ -68,7 +68,7 @@ namespace MyTodoList_1.Controllers
 
              return Request.CreateResponse(HttpStatusCode.OK, item);*/
              var a = db.ItemDbSet.AsQueryable();
-            return a;
+            return a.ToList();
         }
 
         // GET api/values/5

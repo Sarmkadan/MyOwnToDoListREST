@@ -7,8 +7,9 @@ using System.Data.Entity;
 
 namespace MyTodoList_1.Models
 {   
-    public class Connstring : DbContext
+    public class ItemsDbContext : DbContext
     {
+        public ItemsDbContext() : base("Connstring") { }
         public DbSet<Item> ItemDbSet { get; set; }
     }   
         public class Item
