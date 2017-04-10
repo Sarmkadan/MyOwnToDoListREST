@@ -79,7 +79,7 @@ namespace MyTodoList_1.Controllers
         }
 
         // POST api/values
-     /*   public void Post([FromBody]string value)
+        public void Post([FromBody]string value)
         {
         }
 
@@ -91,6 +91,6 @@ namespace MyTodoList_1.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         { 
-        }*/
+        }
     }
 }
