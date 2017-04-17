@@ -79,13 +79,23 @@ namespace MyTodoList_1.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public string Post([FromBody]Item value)
         {
+            
+            if (null != value)
+              {
+              return value.ToString();
+             // db.ItemDbSet.Add(   )    
+
+              }
+            return " ";
+
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] string value)
         {
+            
         }
 
         // DELETE api/values/5
