@@ -79,17 +79,17 @@ namespace MyTodoList_1.Controllers
         }
 
         // POST api/values
-        public string Post([FromBody]Item value)
+        public void Post([FromBody]Item value)
         {
             
             if (null != value)
               {
-              return value.ToString();
-             // db.ItemDbSet.Add(   )    
+              //return value.ToString();
+                  db.ItemDbSet.Add(value);
+                  db.SaveChanges();
 
               }
-            return " ";
-
+           
         }
 
         // PUT api/values/5
