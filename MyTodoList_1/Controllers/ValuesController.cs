@@ -79,28 +79,55 @@ namespace MyTodoList_1.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]Item value)
+        public void Post([FromBody] Item value)
         {
-            
             if (null != value)
-              {
-              //return value.ToString();
-                  db.ItemDbSet.Add(value);
-                  db.SaveChanges();
-
-              }
-           
+            {
+                //return value.ToString();
+                db.ItemDbSet.Add(value);
+                db.SaveChanges();
+            }
         }
-
         // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromUri]int id, [FromBody] Item value)
         {
-            
-        }
+            Item uploaditem = new Item();
+            uploaditem = db.ItemDbSet.Find(id);
+            if (value.Value != null)
+            {
+                uploaditem.Value = value.Value;
+            }
+            if (value.State !=null)
+            {
+                uploaditem.State = value.State;
+            }
+            db.SaveChanges();
+            /*if (value.State != null)
+            {
+                
+            }
+            SampleContext context = new SampleContext();
 
+            var customer = context.Customers
+                // Загрузить покупателя с фамилией "Иванов"
+                .Where(c => c.LastName == "Иванов")
+                .FirstOrDefault();
+
+            // Внести изменения
+            customer.LastName = "Сидоров";
+
+            // Сохранить изменения
+            context.SaveChanges();*/
+
+
+
+        }
         // DELETE api/values/5
-        public void Delete(int id)
-        { 
+        public string Delete(int id)
+        {
+            db.ItemDbSet.Remove(db.ItemDbSet.Find(id));
+            db.SaveChanges();
+            return "Ok";
         }
     }
 }

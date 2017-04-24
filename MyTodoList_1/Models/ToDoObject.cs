@@ -15,7 +15,7 @@ namespace MyTodoList_1.Models
         public class Item
         {
             public int Id { get; set;}
-            public Boolean State { get; set; }
+            public Nullable<bool> State { get; set; }
             public string Value { get; set; }
         }
 }
