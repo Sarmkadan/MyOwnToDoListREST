@@ -37,7 +37,7 @@ namespace MyTodoList_1.Controllers
                     {
                         tokens.Date = DateTime.Now;
                         tokens.Value = CalculateMD5Hash(tokens.Date.ToString("G") + ab.Name);
-                        tokens.GroupId = e.GroupId;
+                        tokens.UserId = e.Id;
                         db.ItemDbSet.Add(tokens);
                         db.SaveChanges();
                     }

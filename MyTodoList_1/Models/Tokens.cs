@@ -17,6 +17,6 @@ namespace MyTodoList_1.Models
         public Nullable<int> Id { get; set; }
         public string Value { get; set; }
         public DateTime Date { get; set; }
-        public Nullable<int> GroupId { get; set; } 
+        public Nullable<int> UserId { get; set; } 
     }
 }
