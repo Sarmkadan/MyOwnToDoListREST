@@ -26,7 +26,7 @@ namespace MyTodoList_1.Controllers
         public IEnumerable<Item> Get()
         {
 
-            var header = ActionContext.Request.Headers;
+          /*  var header = ActionContext.Request.Headers;
             var r = header.GetValues("Token").First();
             if (r != null)
             {
@@ -35,12 +35,12 @@ namespace MyTodoList_1.Controllers
                 if (tk.ItemDbSet.FirstOrDefault(I => I.Value == nToken.Value) != null) // если не нуль
                 {
                     // получити токен и групу - определяем только с групой значения 
-                    Item findItem = new Item();
+                    Item findItem = new Item();*/
                     var a = db.ItemDbSet.AsQueryable().ToList();
                     return a;
-                }
+           /*     }
             }
-            return null; //получаем токен - после получения орпдееляем что там за * может быть
+            return null; //получаем токен - после получения орпдееляем что там за * может быть*/
         }
     
 
