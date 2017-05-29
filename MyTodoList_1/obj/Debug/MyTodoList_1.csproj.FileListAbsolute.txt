@@ -85,7 +85,7 @@ c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoLis
 c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\bin\Microsoft.Owin.Security.Twitter.xml
 c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\bin\System.Web.Http.Owin.xml
-c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\obj\Debug\MyTodoList_1.csprojResolveAssemblyReference.cache
 c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\obj\Debug\MyTodoList_1.dll
 c:\users\sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\obj\Debug\MyTodoList_1.pdb
 C:\Users\Sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\bin\MySql.Data.dll
+C:\Users\Sarmkadans\documents\visual studio 2015\Projects\MyTodoList_1\MyTodoList_1\obj\Debug\MyTodoList_1.csprojResolveAssemblyReference.cache

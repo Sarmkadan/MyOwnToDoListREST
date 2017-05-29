@@ -8,6 +8,7 @@ using MyTodoList_1.Models;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Diagnostics;
 using MySql.Data;
 using MySql.Data.MySqlClient;
     
@@ -18,16 +19,32 @@ namespace MyTodoList_1.Controllers
   //  [Authorize]
     public class ValuesController : ApiController
     {
-        ItemsDbContext db = new ItemsDbContext();
+        private ItemsDbContext db = new ItemsDbContext();
+        private TokensDbContext tk = new TokensDbContext();
         // GET api/values
         [Route("api/Task")]
         public IEnumerable<Item> Get()
-        { 
-            var a = db.ItemDbSet.AsQueryable().ToList();
-            return a;
-        }
+        {
 
-        // GET api/values/5
+            var header = ActionContext.Request.Headers;
+            var r = header.GetValues("Token").First();
+            if (r != null)
+            {
+                Token nToken = new Token();
+                nToken.Value = r;
+                if (tk.ItemDbSet.FirstOrDefault(I => I.Value == nToken.Value) != null) // если не нуль
+                {
+                    // получити токен и групу - определяем только с групой значения 
+                    Item findItem = new Item();
+                    var a = db.ItemDbSet.AsQueryable().ToList();
+                    return a;
+                }
+            }
+            return null; //получаем токен - после получения орпдееляем что там за * может быть
+        }
+    
+
+    // GET api/values/5
         [Route("api/Task/{id}")]
         public Item Get(int id)
         {
