@@ -93,9 +93,9 @@ namespace MyTodoList_1.Controllers
                     {
                         endResult.Status = "Ok";
                         value.GroupId = a.Value;
-                        db.ItemDbSet.Add(value);
+                        db.ItemDbSet.Add(value);                    
                         db.SaveChanges();
-                        var first = db.ItemDbSet.FirstOrDefault(Q => Q == value);
+                        var first = db.ItemDbSet.FirstOrDefault(Q => Q.Value == value.Value);
                         endResult.Id = first.Id;
                         return endResult;
                     }

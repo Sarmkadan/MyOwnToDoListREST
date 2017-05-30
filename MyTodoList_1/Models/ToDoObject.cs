@@ -15,9 +15,9 @@ namespace MyTodoList_1.Models
 
         public class Item
         {
-            public int Id { get; set;}
+            public Nullable<int> Id { get; set;}
             public Nullable<bool> State { get; set; }
             public string Value { get; set; }
-            public int GroupId { get; set; }
+            public Nullable<int> GroupId { get; set; }
         }
 }
