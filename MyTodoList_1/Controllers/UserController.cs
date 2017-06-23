@@ -37,8 +37,10 @@ namespace MyTodoList_1.Controllers
 
         public string CalculateMD5Hash(string input)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
             string result = BitConverter.ToString(checkSum).Replace("-", String.Empty);
 
             return result;
