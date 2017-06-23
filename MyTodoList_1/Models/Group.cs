@@ -7,18 +7,14 @@ using System.Data.Entity;
 
 namespace MyTodoList_1.Models
 {
-    public class UserDbContext : DbContext
+    public class GroupDbContext : DbContext
     {
-        public UserDbContext() : base("Connstring") { }
-        public DbSet<Users> ItemDbSet { get; set; }
-
-
+        public GroupDbContext() : base("Connstring") { }
+        public DbSet<Group> ItemDbSet { get; set; }
     }
-    public class Users
+    public class Group
     {
         public Nullable<int> Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> GroupId { get; set; }
-        public string Password { get; set; }
     }
 }
